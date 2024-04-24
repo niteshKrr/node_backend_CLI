@@ -1,6 +1,6 @@
 [package]
 name = "node_backend"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A cli for creating backend in structured way using node js"
 license = "MIT"
