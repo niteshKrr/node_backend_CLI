@@ -6,14 +6,14 @@ node_modules
 .env*.local
 .env"#;
 
-    pub const ENV_CONTENT: &str = "# ATLAS_USERNAME = your own ATLAS username\nATLAS_PASSWORD = your own ATLAS password";
+    pub const ENV_CONTENT: &str = "ATLAS_USERNAME = your own ATLAS username\nATLAS_PASSWORD = your own ATLAS password";
 
     pub const MONGODB_CONTENT: &str = r#"require("dotenv").config();
 const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    // write your own ATLAS server connection string
+    // write your own ATLAS or Compass server connection string
     `mongodb+srv://${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASSWORD}@cluster11.gd9qm3q.mongodb.net/student_db?retryWrites=true&w=majority`
   )
   .then(() => {
@@ -100,6 +100,6 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+  console.log(`Server is listening at http://localhost:${port}`);
 });"#;
 }
